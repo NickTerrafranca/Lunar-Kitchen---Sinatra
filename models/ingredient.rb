@@ -2,7 +2,6 @@ class Ingredient
   attr_reader :ingredient, :name
 
   def initialize(name)
-    @ingredient = ingredient
     @name = name
   end
 

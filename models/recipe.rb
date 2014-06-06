@@ -35,14 +35,13 @@ class Recipe
 
   def self.all
     all_recipes = []
-    query = "SELECT recipes.id, recipes.name, recipes.instructions, recipes.description
-    FROM recipes
-    ORDER BY recipes.name;"
+    query = "SELECT recipes.id, recipes.name
+    FROM recipes;"
     recipes = db_connection do |conn|
       conn.exec_params(query)
     end
     recipes.each do |recipe|
-      all_recipes << Recipe.new(recipe['id'], recipe['name'], recipe['instructions'], recipe['description'])
+      all_recipes << Recipe.new(recipe['id'], recipe['name'])
     end
     all_recipes
   end
