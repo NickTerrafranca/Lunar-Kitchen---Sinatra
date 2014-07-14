@@ -46,7 +46,6 @@ class Recipe
     all_recipes
   end
 
-
   def self.find(recipe_id)
     query = "SELECT recipes.id, recipes.name, recipes.instructions, recipes.description
     FROM recipes
